@@ -1,0 +1,53 @@
+# Wildcard .gitignore file I use in every project.
+
+# Local configuration
+config_local.php
+
+# Composer
+vendor
+vendor/*
+!public/js/vendor
+!public/js/vendor/*
+composer.phar
+composer.lock
+
+# Project folders and files
+Storage/
+Storage/*
+
+# IntelliJ - PhpStorm and PyCharm
+.idea
+.idea/
+.idea/*
+*.iml
+*.ipr
+*.iws
+
+# Logs
+error.log
+access.log
+
+# Netbeans
+nbproject
+.nbproject
+.nbproject/*
+nbproject/*
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# Mac OSX
+.DS_Store
+# Thumbnails
+._*
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# SublimeText project files
+/*.sublime-project
+*.sublime-workspace
