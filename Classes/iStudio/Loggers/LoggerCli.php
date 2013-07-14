@@ -4,7 +4,6 @@ namespace iStudio\Loggers;
 
 use iStudio\BattleResult;
 use iStudio\Interfaces\BattleLogger;
-use iStudio\Interfaces\Unit;
 
 /**
  * The CLI logger is intended for use on the command line.
@@ -26,7 +25,7 @@ class LoggerCli implements BattleLogger
         BattleLogger::TYPE_INSANE => 'Insanity',
     );
 
-    /** @var array  */
+    /** @var array The colors are color code expressions for the terminal */
     protected $aColors = array(
         BattleLogger::TYPE_HIT => '0;32m',
         BattleLogger::TYPE_MISS => '0;31m',

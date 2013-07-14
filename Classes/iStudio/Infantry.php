@@ -123,6 +123,8 @@ class Infantry extends aUnit
     protected $iDamage = 10;
 
     /**
+     * When a unit acts, he performs his default action.
+     * A soldier will aim and fire, a tank might move and fire, a medic will heal, and so on.
      * @param Army $oAttackedArmy
      * @return array
      */

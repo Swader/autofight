@@ -166,6 +166,9 @@ class Tank extends aUnit
                 $iAmount = $this->iDamage * $iHitScore / 100;
             }
 
+            /**
+             * SHRAPNEL implementation
+             */
             $aAdjacent = $oUnit->getArmy()->getAdjacentUnits($oUnit, $this->getBlastRadius());
             $aPostMerge[] = 'Splash Damage!';
             /** @var \iStudio\Interfaces\Unit $oAdjacentUnit */

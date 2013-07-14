@@ -61,5 +61,6 @@ $oWar->setLogger(
  * Start the war
  */
 $oWar->addArmy($oArmy1->setLabel('Blue'))->addArmy($oArmy2->setLabel('Red'));
+// Uncomment following line to randomly generate army names. Comment the line above this one.
 //$oWar->addArmy($oArmy1)->addArmy($oArmy2);
 $oWar->fight();

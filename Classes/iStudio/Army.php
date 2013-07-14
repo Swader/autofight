@@ -60,7 +60,7 @@ class Army
     /**
      * Sets an army label, for legibility in battle output and personalization
      * @param $sLabel
-     * @return Army
+     * @return $this|Army
      */
     public function setLabel($sLabel)
     {

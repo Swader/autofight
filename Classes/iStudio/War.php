@@ -52,6 +52,10 @@ class War
         return $this;
     }
 
+    /**
+     * Starts the battle.
+     * The War object will call doTurn until there is only one living army left.
+     */
     public function fight()
     {
         if (count($this->aArmies) < 2) {
@@ -94,6 +98,9 @@ class War
         return null;
     }
 
+    /**
+     * The main driver of the application..
+     */
     protected function doTurn()
     {
         /** @var Army $oArmy */
