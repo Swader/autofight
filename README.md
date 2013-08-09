@@ -10,6 +10,10 @@ First, two armies are generated with the number of units you give them. The armi
 
 The "game" ends when all armies but one have zero survivors. There can be only one :)
 
+This is what the fight looks like:
+
+<img src="http://goo.gl/wG6rYf" />
+
 ###Randomness
 There's an element of randomness in the game. Some of these random aspects are as follows:
 
