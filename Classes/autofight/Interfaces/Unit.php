@@ -1,13 +1,13 @@
 <?php
 
-namespace iStudio\Interfaces;
-use iStudio\Army;
+namespace autofight\Interfaces;
+use autofight\Army;
 
 /**
  * A Unit is the basic element of an Army.
  *
  * Class Unit
- * @package iStudio\Interfaces
+ * @package autofight\Interfaces
  */
 interface Unit
 {
@@ -43,7 +43,7 @@ interface Unit
 
     /**
      * Performs action against Attacked Army
-     * @param \iStudio\Army $oAttackedArmy
+     * @param \autofight\Army $oAttackedArmy
      * @return array
      */
     function act(Army $oAttackedArmy);

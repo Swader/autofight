@@ -1,17 +1,17 @@
 <?php
 
-namespace iStudio;
+namespace autofight;
 
-use iStudio\Abstracts\Unit as aUnit;
-use iStudio\Interfaces\BattleLogger;
-use iStudio\Interfaces\Unit as iUnit;
+use autofight\Abstracts\Unit as aUnit;
+use autofight\Interfaces\BattleLogger;
+use autofight\Interfaces\Unit as iUnit;
 
 /**
  * The infantry unit is the smallest unit of any army.
  * One soldier with a rifle.
  *
  * Class Infantry
- * @package iStudio
+ * @package autofight
  */
 class Infantry extends aUnit
 {
@@ -178,7 +178,7 @@ class Infantry extends aUnit
     /**
      * Shoots at a given unit. Hit or miss depends on accuracy and other
      * factors. Can shoot at self and commit suicide with a 100% success rate.
-     * @param \iStudio\Interfaces\Unit $oUnit
+     * @param \autofight\Interfaces\Unit $oUnit
      * @return mixed
      */
     public function shoot(iUnit $oUnit)

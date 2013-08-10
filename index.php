@@ -6,7 +6,7 @@ require_once 'autoload.php';
 require_once 'utility_methods.php';
 
 /** Use helps us avoid long class names */
-use iStudio\Army;
+use autofight\Army;
 
 /** Check if we got the required params */
 /** @var int $iArmy1 */
@@ -37,8 +37,8 @@ if (!$iArmy1 || !$iArmy2) {
 /**
  * Register available unit types
  */
-Army::addUnitType(new \iStudio\Infantry());
-Army::addUnitType(new \iStudio\Tank());
+Army::addUnitType(new \autofight\Infantry());
+Army::addUnitType(new \autofight\Tank());
 
 /**
  * Build armies
@@ -46,15 +46,15 @@ Army::addUnitType(new \iStudio\Tank());
 $oArmy1 = new Army($iArmy1);
 $oArmy2 = new Army($iArmy2);
 
-$oWar = new \iStudio\War();
+$oWar = new \autofight\War();
 
 /**
  * Register appropriate logger, depending on context
  */
 $oWar->setLogger(
     PHP_SAPI == 'cli'
-        ? new \iStudio\Loggers\LoggerCli()
-        : new \iStudio\Loggers\LoggerWeb()
+        ? new \autofight\Loggers\LoggerCli()
+        : new \autofight\Loggers\LoggerWeb()
 );
 
 /**

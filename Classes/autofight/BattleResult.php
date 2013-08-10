@@ -1,7 +1,7 @@
 <?php
 
-namespace iStudio;
-use iStudio\Interfaces\Unit;
+namespace autofight;
+use autofight\Interfaces\Unit;
 
 /**
  * The BattleResult class contains information on the latest
@@ -12,7 +12,7 @@ use iStudio\Interfaces\Unit;
  * type can be an integer corresponding to BattleLogger type constants.
  *
  * Class BattleResult
- * @package iStudio
+ * @package autofight
  */
 class BattleResult {
     /** @var Unit */

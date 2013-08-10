@@ -1,16 +1,16 @@
 <?php
 
-namespace iStudio;
+namespace autofight;
 
-use iStudio\Abstracts\Unit as aUnit;
-use iStudio\Interfaces\Unit as iUnit;
-use iStudio\Interfaces\BattleLogger;
+use autofight\Abstracts\Unit as aUnit;
+use autofight\Interfaces\Unit as iUnit;
+use autofight\Interfaces\BattleLogger;
 
 /**
  * The Tank is a heavily armored vehicle with a large blast radius.
  *
  * Class Tank
- * @package iStudio
+ * @package autofight
  */
 class Tank extends aUnit
 {
@@ -103,7 +103,7 @@ class Tank extends aUnit
     /**
      * Shoots at a given unit. Hit or miss depends on accuracy and other
      * factors. Can shoot at self and commit suicide with a 100% success rate.
-     * @param \iStudio\Interfaces\Unit $oUnit
+     * @param \autofight\Interfaces\Unit $oUnit
      * @return mixed
      */
     public function shoot(iUnit $oUnit)
@@ -171,7 +171,7 @@ class Tank extends aUnit
              */
             $aAdjacent = $oUnit->getArmy()->getAdjacentUnits($oUnit, $this->getBlastRadius());
             $aPostMerge[] = 'Splash Damage!';
-            /** @var \iStudio\Interfaces\Unit $oAdjacentUnit */
+            /** @var \autofight\Interfaces\Unit $oAdjacentUnit */
             foreach ($aAdjacent as $oAdjacentUnit) {
                 if ($oAdjacentUnit->isAlive()) {
                     $iAmountToReduce = round($iAmount * ($this->getBlastRadius() - abs($oUnit->getIndex()-$oAdjacentUnit->getIndex())) / ($this->getBlastRadius()*2) + 1, 2);

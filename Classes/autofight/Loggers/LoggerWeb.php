@@ -1,16 +1,16 @@
 <?php
 
-namespace iStudio\Loggers;
+namespace autofight\Loggers;
 
-use iStudio\BattleResult;
-use iStudio\Interfaces\BattleLogger;
+use autofight\BattleResult;
+use autofight\Interfaces\BattleLogger;
 
 /**
  * The web logger simply outputs all the battle messages in the browser.
  * The messages will be color coded.
  *
  * Class LoggerWeb
- * @package iStudio
+ * @package autofight
  */
 class LoggerWeb implements BattleLogger
 {

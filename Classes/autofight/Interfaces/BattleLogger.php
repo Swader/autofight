@@ -1,13 +1,13 @@
 <?php
 
-namespace iStudio\Interfaces;
-use iStudio\BattleResult;
+namespace autofight\Interfaces;
+use autofight\BattleResult;
 
 /**
  * The Battle Logger is used to output the progress of the battle.
  *
  * Class BattleLogger
- * @package iStudio\Interfaces
+ * @package autofight\Interfaces
  */
 interface BattleLogger
 {

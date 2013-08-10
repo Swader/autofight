@@ -1,15 +1,15 @@
 <?php
 
-namespace iStudio;
-use iStudio\Interfaces\BattleLogger;
-use iStudio\Interfaces\Unit;
+namespace autofight;
+use autofight\Interfaces\BattleLogger;
+use autofight\Interfaces\Unit;
 
 /**
  * War is the main event.
  * It contains armies, and logs the output of every turn.
  *
  * Class War
- * @package iStudio
+ * @package autofight
  */
 class War
 {

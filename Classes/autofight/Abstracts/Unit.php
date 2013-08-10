@@ -1,15 +1,15 @@
 <?php
 
-namespace iStudio\Abstracts;
-use iStudio\Army;
+namespace autofight\Abstracts;
+use autofight\Army;
 
 /**
  * Abstract class for basic common method inheritance
  *
  * Class Unit
- * @package iStudio\Abstracts
+ * @package autofight\Abstracts
  */
-abstract class Unit implements \iStudio\Interfaces\Unit
+abstract class Unit implements \autofight\Interfaces\Unit
 {
 
     /** @var array */

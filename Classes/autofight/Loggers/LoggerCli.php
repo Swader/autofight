@@ -1,9 +1,9 @@
 <?php
 
-namespace iStudio\Loggers;
+namespace autofight\Loggers;
 
-use iStudio\BattleResult;
-use iStudio\Interfaces\BattleLogger;
+use autofight\BattleResult;
+use autofight\Interfaces\BattleLogger;
 
 /**
  * The CLI logger is intended for use on the command line.
@@ -11,7 +11,7 @@ use iStudio\Interfaces\BattleLogger;
  * to finish, but gives the "game" a more turn-based impression.
  *
  * Class LoggerCli
- * @package iStudio
+ * @package autofight
  */
 class LoggerCli implements BattleLogger
 {

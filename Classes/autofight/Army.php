@@ -1,11 +1,11 @@
 <?php
 
-namespace iStudio;
-use iStudio\Interfaces\Unit;
+namespace autofight;
+use autofight\Interfaces\Unit;
 
 /**
  * Class Army
- * @package iStudio
+ * @package autofight
  */
 class Army
 {
@@ -113,7 +113,7 @@ class Army
 
     /**
      * Returns a random living unit from the army
-     * @param \iStudio\Interfaces\Unit|null $oNotUnit
+     * @param \autofight\Interfaces\Unit|null $oNotUnit
      * @return Unit
      */
     public function getRandomAliveUnit(Unit $oNotUnit = null)
