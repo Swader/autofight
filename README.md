@@ -12,7 +12,7 @@ The "game" ends when all armies but one have zero survivors. There can be only o
 
 This is what the fight looks like:
 
-<img src="http://goo.gl/wG6rYf" />
+<a href="http://showterm.io/a0616ce5e6f411f292e18#fast" title="Sample 10 vs 10 fight">Sample 10 vs 10 fight</a>
 
 ###Randomness
 There's an element of randomness in the game. Some of these random aspects are as follows:
