@@ -55,7 +55,7 @@ interface Unit
      * Unit's rifle would only have a radius of 1 (single target).
      * @return int
      */
-    function getBlastRadius();
+    function getRadius();
 
     /**
      * Returns true if the Unit is still alive, false otherwise

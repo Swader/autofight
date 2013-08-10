@@ -79,7 +79,7 @@ class Tank extends aUnit
     protected $iAccuracy = 35;
 
     /** @var int */
-    protected $iBlastRadius = 3;
+    protected $iRadius = 3;
 
     /** @var int */
     protected $iDamage = 50;
@@ -169,12 +169,12 @@ class Tank extends aUnit
             /**
              * SHRAPNEL implementation
              */
-            $aAdjacent = $oUnit->getArmy()->getAdjacentUnits($oUnit, $this->getBlastRadius());
+            $aAdjacent = $oUnit->getArmy()->getAdjacentUnits($oUnit, $this->getRadius());
             $aPostMerge[] = 'Splash Damage!';
             /** @var \autofight\Interfaces\Unit $oAdjacentUnit */
             foreach ($aAdjacent as $oAdjacentUnit) {
                 if ($oAdjacentUnit->isAlive()) {
-                    $iAmountToReduce = round($iAmount * ($this->getBlastRadius() - abs($oUnit->getIndex()-$oAdjacentUnit->getIndex())) / ($this->getBlastRadius()*2) + 1, 2);
+                    $iAmountToReduce = round($iAmount * ($this->getRadius() - abs($oUnit->getIndex()-$oAdjacentUnit->getIndex())) / ($this->getRadius()*2) + 1, 2);
                     $oAdjacentUnit->decreaseHealth($iAmountToReduce);
                     if ($oAdjacentUnit->isAlive()) {
                         $aPostMerge[] = $oAdjacentUnit.' was hit by shrapnel for '.$iAmountToReduce.' damage.';

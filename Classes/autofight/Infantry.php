@@ -114,7 +114,7 @@ class Infantry extends aUnit
     protected $iAccuracy = 50;
 
     /** @var int */
-    protected $iBlastRadius = 0;
+    protected $iRadius = 0;
 
     /** @var string */
     protected $sType = 'infantry';

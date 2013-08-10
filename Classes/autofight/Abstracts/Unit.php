@@ -25,7 +25,7 @@ abstract class Unit implements \autofight\Interfaces\Unit
     protected $iAccuracy;
 
     /** @var int */
-    protected $iBlastRadius;
+    protected $iRadius;
 
     /** @var string */
     protected $sType;
@@ -99,9 +99,9 @@ abstract class Unit implements \autofight\Interfaces\Unit
      * have a radius of 0 (single target).
      * @return int
      */
-    function getBlastRadius()
+    function getRadius()
     {
-        return $this->iBlastRadius;
+        return $this->iRadius;
     }
 
     /**
