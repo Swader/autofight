@@ -23,10 +23,10 @@ class Army
     protected $sLabel;
 
     /** @var array */
-    protected $aAdjectives = ['Iron', 'Fuchsia', 'Red', 'Brave', 'Lonely', 'Bitter', 'Deadly', 'Black', 'Armored'];
+    protected static $aAdjectives = ['Iron', 'Fuchsia', 'Red', 'Brave', 'Lonely', 'Bitter', 'Deadly', 'Black', 'Armored'];
 
     /** @var array */
-    protected $aNouns = ['Scorpions', 'Hand', 'Death', 'Marauders', 'Itch', 'Scratch', 'Zeus', 'Hummer', 'Volcano'];
+    protected static $aNouns = ['Scorpions', 'Hand', 'Death', 'Marauders', 'Itch', 'Scratch', 'Zeus', 'Hummer', 'Volcano'];
 
 
     /**
@@ -48,12 +48,7 @@ class Army
      */
     public function __construct($iSize)
     {
-        if (!is_numeric($iSize) || $iSize < 1) {
-            die('Army construct param needs to be numeric and positive.
-            "' . $iSize . '" is not.');
-        }
         $this->setSize((int)$iSize);
-
         $this->buildArmy();
     }
 
@@ -86,6 +81,9 @@ class Army
      */
     protected function buildArmy()
     {
+        if (empty(self::$aUnitTypes)) {
+            die('No unit types have been registered in the Army class.');
+        }
         $iRarityTotal = 0;
         $aRandomnessArray = array();
         /** @var Unit $oUnit */
@@ -93,13 +91,12 @@ class Army
             $iRarityTotal += $oUnit->getRarity();
             $aRandomnessArray[$k] = $iRarityTotal;
         }
-
         for ($i = 1; $i <= $this->getSize(); $i++) {
             $iRand = rand(1, $iRarityTotal);
             foreach ($aRandomnessArray as $k => $iScore) {
                 if ($iRand > $iScore) {
                     continue;
-                } else if ($iRand < $iScore) {
+                } else if ($iRand <= $iScore) {
                     $oUnit = clone self::$aUnitTypes[$k];
                     $oUnit->setArmy($this);
                     break;
@@ -179,6 +176,11 @@ class Army
      */
     protected function setSize($iSize)
     {
+        if (!is_numeric($iSize) || $iSize < 1) {
+            die('Army construct param needs to be numeric and positive.
+            "' . $iSize . '" is not.');
+        }
+
         $this->iSize = $iSize;
         return $this;
     }
@@ -213,18 +215,18 @@ class Army
      */
     public function generateRandomLabel()
     {
-        if (empty($this->aAdjectives) || empty($this->aNouns)) {
+        if (empty(self::$aAdjectives) || empty(self::$aNouns)) {
             return (string)rand(0, 1000);
         }
 
-        $iAdjective = rand(0, count($this->aAdjectives) - 1);
-        $iNoun = rand(0, count($this->aNouns) - 1);
-        $sLabel = $this->aAdjectives[$iAdjective] . ' ' . $this->aNouns[$iNoun];
+        $iAdjective = rand(0, count(self::$aAdjectives) - 1);
+        $iNoun = rand(0, count(self::$aNouns) - 1);
+        $sLabel = self::$aAdjectives[$iAdjective] . ' ' . self::$aNouns[$iNoun];
 
         /** Remove picked values and reset array keys */
-        unset($this->aAdjectives[$iAdjective], $this->aNouns[$iNoun]);
-        $this->aNouns = array_values($this->aNouns);
-        $this->aAdjectives = array_values($this->aAdjectives);
+        unset(self::$aAdjectives[$iAdjective], self::$aNouns[$iNoun]);
+        self::$aNouns = array_values(self::$aNouns);
+        self::$aAdjectives = array_values(self::$aAdjectives);
 
         return $sLabel;
     }
