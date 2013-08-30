@@ -34,6 +34,7 @@
             #right {
                 width: 340px;
                 float: right;
+                margin-left: 20px;
             }
 
             footer {
