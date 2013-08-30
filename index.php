@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+
 <?php
 
 /** Autoloader helps us avoid requires and includes */
@@ -63,3 +81,6 @@ $oWar->setLogger(
 //$oWar->addArmy($oArmy1->setLabel('Blue'))->addArmy($oArmy2->setLabel('Red'));
 $oWar->addArmy($oArmy1)->addArmy($oArmy2);
 $oWar->fight();
+?>
+</body>
+</html>
