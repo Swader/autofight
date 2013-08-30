@@ -25,6 +25,10 @@
                 /* the next props are meant to keep this block independent from the other floated one */
                 width: auto;
                 overflow: hidden;
+                background-color: whitesmoke;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid silver;
             }
 
             #right {
@@ -38,7 +42,7 @@
     <body>
 
     <div id="main">
-    <div style="height:110px">
+    <div style="height:110px; text-align: center">
         <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- Autofight - leader -->
         <ins class="adsbygoogle"
