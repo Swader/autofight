@@ -5,6 +5,8 @@ This is a small task I was given by a prospective employer. Originally, I was su
 This is a completely useless no-GUI highly extensible text output "app".
 Use it only for educational purposes on OOP and how to write clean and neatly commented code.
 
+A detailed explanation on how and why this was built is available via [this tutorial](http://bit.ly/15lFkbM).
+
 ##What's going on here?
 First, two armies are generated with the number of units you give them. The armies have a random number of random types of units - one might be 100% infantry, the other might have 10 tanks alongside 40 infantry, and so on. There is support for more than 2 armies, but you need to manually add the army to the War object in index.php. Then, each army is given a randomly generated label, unless you hard code one, again in index.php. On every turn, the army order is randomized. This simulates initiative. An army picks the army to attack if there's more than two in the war (if not, it just picks the one that's not them), and all soldiers from the attacking army then make a move against the defending army, one by one, targeting a random alive opponent. Once they've all done their moves, the next army does the same - until there are no more armies left to move that turn.
 
