@@ -4,8 +4,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>Autofight - A PHP job interview task</title>
+        <meta name="description" content="Autofight - a PHP job interview task in the form of a browser based text war game. Tutorial on how it was built available here: http://bit.ly/15oRHgm">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <style type="text/css">
@@ -35,6 +35,21 @@
                 width: 340px;
                 float: right;
             }
+
+            footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                height: 25px;
+                border-top: 1px solid black;
+                background-color: silver;
+                width: 100%;
+                text-align: center;
+                line-height: 25px;
+                font-family: arial, sans-serif;
+                font-size: 10pt;
+            }
+            footer a {color: black;}
 
         </style>
 
@@ -78,6 +93,10 @@
     </div>
 
     <div id="content">
+
+    <hr>
+    <p>Full tutorial on how this was built and why available <a href="http://bit.ly/15oRHgm" title="Autofight - a PHP job interview task tutorial">here</a>.</p>
+    <hr>
 
 <?php endif; ?>
 
@@ -148,6 +167,13 @@ if (!$iArmy1 || !$iArmy2) {
     $oWar->fight();
 }
 ?>
+
+<br />
+<br />
+
+<footer>
+    By <a href="https://plus.google.com/104771776404197897488?rel=author">Bruno Škvorc</a>
+</footer>
 
 <?php if (PHP_SAPI != 'cli') : ?>
 
