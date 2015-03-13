@@ -17,6 +17,8 @@ interface BattleLogger
     const TYPE_DEATH = 3;
     const TYPE_MOVE = 4;
     const TYPE_INSANE = 5;
+	const TYPE_HEAL = 6;
+	const TYPE_NOTHEAL = 7;
 
     /**
      * Logs a misc message

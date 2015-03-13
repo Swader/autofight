@@ -23,6 +23,8 @@ class LoggerCli implements BattleLogger
         BattleLogger::TYPE_DEATH => 'Death',
         BattleLogger::TYPE_MOVE => 'Move',
         BattleLogger::TYPE_INSANE => 'Insanity',
+		BattleLogger::TYPE_HEAL => 'Healing',
+		BattleLogger::TYPE_NOTHEAL => 'Missed healing'
     );
 
     /** @var array The colors are color code expressions for the terminal */
@@ -31,7 +33,9 @@ class LoggerCli implements BattleLogger
         BattleLogger::TYPE_MISS => '0;31m',
         BattleLogger::TYPE_DEATH => '0;33m',
         BattleLogger::TYPE_MOVE => '0;37m',
-        BattleLogger::TYPE_INSANE => '0;36m'
+        BattleLogger::TYPE_INSANE => '0;36m',
+		BattleLogger::TYPE_HEAL => '0;35m',
+        BattleLogger::TYPE_NOTHEAL => '0;34m'
     );
 
     /**
@@ -56,6 +60,12 @@ class LoggerCli implements BattleLogger
             case (BattleLogger::TYPE_DEATH) :
                 $sMessage .= 'causes '.$oResult->amount.' damage and '.$oResult->message.' '.ucfirst($oResult->defender).'!!';
                 break;
+			case (BattleLogger::TYPE_HEAL) :
+			$sMessage .= 'receives '.$oResult->amount.' health '.$oResult->message.' '.ucfirst($oResult->defender).'!';
+			break;
+			case (BattleLogger::TYPE_NOTHEAL) :
+			$sMessage .= 'only gets '.$oResult->amount.' health '.$oResult->message.' '.ucfirst($oResult->defender).'!';
+			break;
             default:
                 break;
         }
