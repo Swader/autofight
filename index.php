@@ -9,17 +9,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <style type="text/css">
-
             #main {
                 max-width: 1024px;
                 margin: auto;
             }
-
             .container {
                 height: auto;
                 overflow: hidden;
             }
-
             #content {
                 float: none; /* not needed, just for clarification */
                 /* the next props are meant to keep this block independent from the other floated one */
@@ -30,13 +27,11 @@
                 border-radius: 5px;
                 border: 1px solid silver;
             }
-
             #right {
                 width: 340px;
                 float: right;
                 margin-left: 20px;
             }
-
             footer {
                 position: fixed;
                 bottom: 0;
@@ -51,7 +46,6 @@
                 font-size: 10pt;
             }
             footer a {color: black;}
-
         </style>
 
     </head>
@@ -102,15 +96,12 @@
 <?php endif; ?>
 
 <?php
-
 /** Autoloader helps us avoid requires and includes */
 require_once 'autoload.php';
 /** Utility methods help us with some common operations */
 require_once 'utility_methods.php';
-
 /** Use helps us avoid long class names */
 use autofight\Army;
-
 /** Check if we got the required params */
 /** @var int $iArmy1 */
 $iArmy1 = (PHP_SAPI == 'cli')
@@ -120,7 +111,6 @@ $iArmy1 = (PHP_SAPI == 'cli')
 $iArmy2 = (PHP_SAPI == 'cli')
     ? (isset($argv[2]) ? $argv[2] : 0)
     : ((isset($_GET['army2'])) ? (int)$_GET['army2'] : 0);
-
 if (!$iArmy1 || !$iArmy2) {
     $sMsg = 'Two parameters are expected - army1 and army2.
     Cannot continue without both. ';
@@ -136,21 +126,18 @@ if (!$iArmy1 || !$iArmy2) {
     }
     echo $sMsg;
 } else {
-
     /**
      * Register available unit types
      */
     Army::addUnitType(new \autofight\Infantry());
     Army::addUnitType(new \autofight\Tank());
-
+	Army::addUnitType(new \autofight\Priest());
     /**
      * Build armies
      */
     $oArmy1 = new Army($iArmy1);
     $oArmy2 = new Army($iArmy2);
-
     $oWar = new \autofight\War();
-
     /**
      * Register appropriate logger, depending on context
      */
@@ -159,7 +146,6 @@ if (!$iArmy1 || !$iArmy2) {
             ? new \autofight\Loggers\LoggerCli()
             : new \autofight\Loggers\LoggerWeb()
     );
-
     /**
      * Start the war
      */
@@ -193,10 +179,8 @@ if (!$iArmy1 || !$iArmy2) {
             a.src = g;
             m.parentNode.insertBefore(a, m)
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
         ga('create', 'UA-43657205-1', 'bitfalls.com');
         ga('send', 'pageview');
-
     </script>
     </body>
     </html>

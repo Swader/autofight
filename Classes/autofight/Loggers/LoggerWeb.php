@@ -21,7 +21,9 @@ class LoggerWeb implements BattleLogger
         BattleLogger::TYPE_MISS => 'Miss',
         BattleLogger::TYPE_DEATH => 'Death',
         BattleLogger::TYPE_MOVE => 'Move',
-        BattleLogger::TYPE_INSANE => 'Insanity'
+        BattleLogger::TYPE_INSANE => 'Insanity',
+		BattleLogger::TYPE_HEAL => 'Healing',
+		BattleLogger::TYPE_NOTHEAL => 'Missed healing'
     );
 
     /** @var array */
@@ -30,7 +32,9 @@ class LoggerWeb implements BattleLogger
         BattleLogger::TYPE_MISS => 'color: red',
         BattleLogger::TYPE_DEATH => 'color: black; text-decoration: underline',
         BattleLogger::TYPE_MOVE => 'color: grey',
-        BattleLogger::TYPE_INSANE => 'color: orange; font-weight:bold; text-decoration: underline'
+        BattleLogger::TYPE_INSANE => 'color: orange; font-weight:bold; text-decoration: underline',
+		BattleLogger::TYPE_HEAL => 'color: darkorchid',
+		BattleLogger::TYPE_NOTHEAL => 'color: LightSlateGray'
     );
 
     /**
@@ -64,6 +68,16 @@ class LoggerWeb implements BattleLogger
                 break;
             case (BattleLogger::TYPE_DEATH) :
                 $sMessage .= 'causes '.$oResult->amount.' damage and '.$oResult->message.' '.ucfirst($oResult->defender).'!!';
+                break;
+            default:
+                break;
+			case (BattleLogger::TYPE_HEAL) :
+                $sMessage .= $oResult->message.'. '.ucfirst($oResult->defender);
+                $sMessage .= ' receives '.$oResult->amount.' health.';
+                break;
+			case (BattleLogger::TYPE_NOTHEAL) :
+                $sMessage .= $oResult->message.'. '.ucfirst($oResult->defender);
+                $sMessage .= ' only gets '.$oResult->amount.' health.';
                 break;
             default:
                 break;
